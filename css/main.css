@@ -4,6 +4,10 @@
 @import url('https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Roboto+Slab:wght@100;300;400;700&display=swap');
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 body {
     overflow-x: hidden;
     font-family: 'Roboto Slab', 'Helvetica Neue', Helvetica, Arial, sans-serif;
