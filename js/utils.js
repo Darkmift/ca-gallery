@@ -4,3 +4,8 @@ function formatDate(milliseconds) {
     var mo = new Intl.DateTimeFormat('en', { month: 'long' }).format(d);
     return `${mo} ${ye}`;
 }
+
+function isEmail(email) {
+    var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    return regex.test(email);
+}

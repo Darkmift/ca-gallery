@@ -22,14 +22,59 @@
 </head>
 
 <body id="page-top" onload="init()">
+	<!-- aside contact me form btn -->
 	<div class="offcanvas-btn" onClick="openCanvas()">
 		<i class="fa fa-comment" aria-hidden="true"></i>
 	</div>
+
+	<!-- aside contact me form -->
 	<aside class="offcanvas-aside">
 
 		<!-- Contact -->
 		<section id="contact">
-			<h4>Contact Me</h4>
+			<div class="team-member">
+				<img class="mx-auto rounded-circle" src="img/team/2.jpg" alt="">
+				<h4>Larry Parker</h4>
+				<p class="text-muted">Lead Marketer</p>
+				<ul class="list-inline social-buttons">
+					<li class="list-inline-item">
+						<a href="#">
+							<i class="fa fa-twitter"></i>
+						</a>
+					</li>
+					<li class="list-inline-item">
+						<a href="#">
+							<i class="fa fa-facebook"></i>
+						</a>
+					</li>
+					<li class="list-inline-item">
+						<a href="#">
+							<i class="fa fa-linkedin"></i>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<hr>
+			<form class="contact-me-form wrapper d-flex flex-column align-items-start flex-wrap">
+				<!-- email -->
+				<h6>Let me hear from you!</h6>
+				<label class="form-label">Your email</label>
+				<div class="flex-column input-group mb-3">
+					<input type="email" name="email" class="w-100 form-control">
+				</div>
+				<!-- email subject -->
+				<label class="form-label">Subject</label>
+				<div class="flex-column input-group mb-3">
+					<input type="text" name="subject" class="w-100 form-control">
+				</div>
+				<!-- email subject -->
+				<label class="form-label">Message text:</label>
+				<div class="flex-column input-group mb-3">
+					<textarea name="text" rows="3" class="w-100 form-control"></textarea>
+				</div>
+				<button class="submit-form-btn btn btn-xl align-self-end">submit</button>
+			</form>
+
 		</section>
 
 	</aside>
@@ -222,6 +267,7 @@
 
 	<!-- Bootstrap core JavaScript -->
 	<script src="vendor/jquery/jquery.min.js"></script>
+	<script src="vendor/jquery validate/jquery.validate.min.js"></script>
 	<script src="vendor/popper/popper.min.js"></script>
 	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 

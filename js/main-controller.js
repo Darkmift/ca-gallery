@@ -9,6 +9,27 @@ function init() {
         elPortfolioItemWrapper.innerHTML += renderPortfolioItem(project);
         elFooter.insertAdjacentHTML('afterend', renderModal(project));
     });
+
+    //enable and use jquery validation form
+
+    $('.contact-me-form').validate({
+        errorElement: 'div',
+        // initialize the plugin
+        rules: {
+            email: {
+                required: true,
+                email: true,
+            },
+            subject: {
+                required: true,
+                minlength: 5,
+            },
+            text: {
+                required: true,
+                minlength: 20,
+            },
+        },
+    });
 }
 
 //render portfolio-item element
@@ -77,3 +98,35 @@ function renderModal(project) {
 
     return strHTML;
 }
+
+//submit email form
+// function onSubmitEmailForm(ev) {
+//     ev.preventDefault();
+
+//     var txtEmailInput = $('[name="email"]').val()
+// }
+
+$('.contact-me-form').on('submit', function (event) {
+    event.preventDefault();
+    var formData = $(this)
+        .serializeArray()
+        .reduce(function (acc, input) {
+            acc[input.name] = input.value;
+            return acc;
+        }, {});
+
+    var urlRedirect = `https://mail.google.com/mail/?view=cm&fs=1&to=${formData.email}&su=${formData.subject}&body=${formData.text}`;
+    window.location.replace(urlRedirect);
+});
+
+//toggle "contact me" aside element
+function openCanvas() {
+    document
+        .querySelector('.offcanvas-btn')
+        .classList.toggle('offcanvas-btn-open');
+    document
+        .querySelector('.offcanvas-aside')
+        .classList.toggle('offcanvas-aside-open');
+}
+
+openCanvas();
