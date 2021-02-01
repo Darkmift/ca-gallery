@@ -108,12 +108,16 @@ function renderModal(project) {
 
 $('.contact-me-form').on('submit', function (event) {
     event.preventDefault();
+    var errorFlag = false;
     var formData = $(this)
         .serializeArray()
         .reduce(function (acc, input) {
             acc[input.name] = input.value;
+            if (input.value === '') errorFlag = true;
             return acc;
         }, {});
+
+    if (errorFlag) return;
 
     var urlRedirect = `https://mail.google.com/mail/?view=cm&fs=1&to=${formData.email}&su=${formData.subject}&body=${formData.text}`;
     window.location.replace(urlRedirect);
