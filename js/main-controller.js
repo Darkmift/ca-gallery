@@ -128,5 +128,3 @@ function openCanvas() {
         .querySelector('.offcanvas-aside')
         .classList.toggle('offcanvas-aside-open');
 }
-
-openCanvas();
