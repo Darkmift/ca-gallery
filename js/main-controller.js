@@ -5,7 +5,7 @@ function init() {
     //we append into body after footer all modals
     var elFooter = document.querySelector('footer');
 
-    gProjs.forEach(function (project) {
+    getGprojs().forEach(function (project) {
         elPortfolioItemWrapper.innerHTML += renderPortfolioItem(project);
         elFooter.insertAdjacentHTML('afterend', renderModal(project));
     });
@@ -52,14 +52,17 @@ function renderPortfolioItem(project) {
 
     return strHTML;
 }
+
 //render modal
+//TODO:onclick render modal arg=proj.id
 function renderModal(project) {
+    // var project = findProject(pId)
     var strFormattedDate = formatDate(project.publishedAt);
     var elCategories = project.labels
         .map(function (label) {
-            return /*html*/ `<span class="badge badge-secondary">label</span>`;
+            return /*html*/ `<span class="badge badge-secondary">${label}</span>`;
         })
-        .join('');
+        .join('&nbsp;');
 
     var strHTML = /*html*/ `
 	<div class="portfolio-modal modal fade" id="portfolioModal_${project.id}" tabindex="-1" role="dialog" aria-hidden="true">
@@ -98,13 +101,6 @@ function renderModal(project) {
 
     return strHTML;
 }
-
-//submit email form
-// function onSubmitEmailForm(ev) {
-//     ev.preventDefault();
-
-//     var txtEmailInput = $('[name="email"]').val()
-// }
 
 $('.contact-me-form').on('submit', function (event) {
     event.preventDefault();

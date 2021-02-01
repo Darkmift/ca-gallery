@@ -45,6 +45,6 @@ var gProjs = [
     },
 ];
 
-function getGproj() {
+function getGprojs() {
     return gProjs;
 }

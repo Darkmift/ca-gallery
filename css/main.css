@@ -120,6 +120,7 @@ body {
     flex-direction: column;
     align-items: stretch;
     justify-content: center;
+    z-index: 100000;
 }
 
 #contact {
